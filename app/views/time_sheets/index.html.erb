@@ -59,29 +59,29 @@
 					End means ending time of event.
 					allDay means if events is for entire day or not.
 				*/
-				select: function(start, end, allDay)
-				{
-					/*
-						after selection user will be promted for enter title for event.
-					*/
-					var title = prompt('Event Title:');
-					/*
-						if title is enterd calendar will add title and event into fullCalendar.
-					*/
-					if (title)
-					{
-						calendar.fullCalendar('renderEvent',
-							{
-								title: title,
-								start: start,
-								end: end,
-								allDay: allDay
-							},
-							true // make the event "stick"
-						);
-					}
-					calendar.fullCalendar('unselect');
-				},
+				// select: function(start, end, allDay)
+				// {
+				// 	/*
+				// 		after selection user will be promted for enter title for event.
+				// 	*/
+				// 	var title = prompt('Event Title:');
+				// 	/*
+				// 		if title is enterd calendar will add title and event into fullCalendar.
+				// 	*/
+				// 	if (title)
+				// 	{
+				// 		calendar.fullCalendar('renderEvent',
+				// 			{
+				// 				title: title,
+				// 				start: start,
+				// 				end: end,
+				// 				allDay: allDay
+				// 			},
+				// 			true // make the event "stick"
+				// 		);
+				// 	}
+				// 	calendar.fullCalendar('unselect');
+				// },
 				/*
 					editable: true allow user to edit events.
 				*/
