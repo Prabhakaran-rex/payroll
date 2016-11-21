@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   has_many :time_sheets
 
   def address
-  	"#{street},#{city},#{state},#{country},#{zipcode}"
+  	"#{street}, #{city}, #{state}, #{country}, #{zipcode}"
   end
+
+  def csc
+    "#{city}, #{state}, #{country}"
+  end
+
 end

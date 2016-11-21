@@ -6,7 +6,17 @@ class TimeSheetsController < ApplicationController
 		if @time_sheets.count > 0
 			# @time_sheets.each do |time|
 			time = @time_sheets.last
-			if time.check_in.strftime("%D") == Time.now.strftime("%D")
+			if time.check_in and time.check_in.strftime("%D") == Time.now.strftime("%D")
+				@check_in = true if time.try(:check_in).present?
+				@check_out = true if time.try(:check_out).present?
+				@time_sheet = time
+				if @check_in && @check_out
+					@time_sheet = TimeSheet.new
+					@check_in = false
+					@check_out = false
+				end
+			else
+				# @time_sheet = TimeSheet.new
 				@check_in = true if time.try(:check_in).present?
 				@check_out = true if time.try(:check_out).present?
 				@time_sheet = time
