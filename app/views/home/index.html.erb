@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+  	<% if current_user.present? %>
+     <%= link_to "#{current_user.address}", "#",class: "address", target: "_blank" %>
+    <%end%>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	$('.address').each(function () {
+      var link = "<a href='http://maps.google.com/maps?q=" + encodeURIComponent( $(this).text() ) + "' target='_blank'>" + $(this).text() + "</a>";
+      $(this).html(link);
+   });
+</script>
+
+
